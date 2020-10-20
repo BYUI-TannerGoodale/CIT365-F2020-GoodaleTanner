@@ -10,10 +10,10 @@ namespace MegaDesk_Goodale
     class Desk
     {
         // Define attributes of a desk
-        public int width { get; set; }
-        public int depth { get; set; }
-        public int drawersNumber { get; set; }
-        public int surfaceMaterial { get; set; }
+        public int width;
+        public int depth;
+        public int drawersNumber;
+        public int surfaceMaterial;
 
         // Set constants for Max/Min Depth/Width
         public const int MAX_WIDTH = 96;
@@ -22,7 +22,7 @@ namespace MegaDesk_Goodale
         public const int MIN_DEPTH = 12;
     }
 
-    public enum SurfaceMaterial: int
+    public enum SurfaceMaterial
     {
         Pine = 50,
         Laminate = 100,

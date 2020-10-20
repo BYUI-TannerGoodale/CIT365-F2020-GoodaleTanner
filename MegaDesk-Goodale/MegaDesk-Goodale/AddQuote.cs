@@ -21,7 +21,7 @@ namespace MegaDesk_Goodale
             string quoteDateString = quoteDate.ToString("dd MMMM yyyy");
             QuoteDate.Text = quoteDateString;
 
-            // Populate the surface material combo box with the enum from the Desk class
+            // Populate the surface material combo box with the enum from the Desk class file
             List<SurfaceMaterial> surfaceMaterials = Enum.GetValues(typeof(SurfaceMaterial)).Cast<SurfaceMaterial>().ToList();
             SurfaceMaterial.DataSource = surfaceMaterials;
         }
