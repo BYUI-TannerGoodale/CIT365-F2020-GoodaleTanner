@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using MyScriptureJournal.Data;
-using MyScriptureJournal.Models;
+using MegaDesk.Data;
+using MegaDesk.Models;
+using Microsoft.AspNetCore.Http;
 
-namespace MyScriptureJournal.Pages.JournalEntries
+namespace MegaDesk.Pages.DeskQuotes
 {
     public class DeleteModel : PageModel
     {
-        private readonly MyScriptureJournal.Data.MyScriptureJournalContext _context;
+        private readonly MegaDesk.Data.MegaDeskContext _context;
 
-        public DeleteModel(MyScriptureJournal.Data.MyScriptureJournalContext context)
+        public DeleteModel(MegaDesk.Data.MegaDeskContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public JournalEntry JournalEntry { get; set; }
+        public DeskQuote DeskQuote { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace MyScriptureJournal.Pages.JournalEntries
                 return NotFound();
             }
 
-            JournalEntry = await _context.JournalEntry.FirstOrDefaultAsync(m => m.ID == id);
+            DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (JournalEntry == null)
+            if (DeskQuote == null)
             {
                 return NotFound();
             }
@@ -46,15 +46,15 @@ namespace MyScriptureJournal.Pages.JournalEntries
                 return NotFound();
             }
 
-            JournalEntry = await _context.JournalEntry.FindAsync(id);
+            DeskQuote = await _context.DeskQuote.FindAsync(id);
 
-            if (JournalEntry != null)
+            if (DeskQuote != null)
             {
-                _context.JournalEntry.Remove(JournalEntry);
+                _context.DeskQuote.Remove(DeskQuote);
                 await _context.SaveChangesAsync();
             }
 
-            HttpContext.Session.SetString("_Message" , "Successfully deleted entry.");
+            HttpContext.Session.SetString("_Message", "Successfully Deleted Quote");
 
             return RedirectToPage("./Index");
         }
