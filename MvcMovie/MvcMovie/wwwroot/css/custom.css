@@ -1,0 +1,59 @@
+﻿@media (min-width: 220px) {
+    #home-cont {
+        margin-top: 15em;
+    }
+}
+@media (min-width: 1200px) {
+    .image-center {
+        margin-top: -15em;
+        margin-right: 20em;
+    }
+    .width-25{
+        width: 25%;
+    }
+}
+@media (min-width: 992px){
+    .image-center {
+        margin-top: -16em;
+        margin-right: 20em;
+    }
+    .width-25 {
+        width: 25%;
+    }
+}
+@media (min-width: 768px) {
+    .image-center {
+        margin-top: -16em;
+        margin-right: 5em;
+    }
+    .width-25 {
+        width: 25%;
+    }
+    .width-50{
+        width: 25em;
+    }
+}
+@media (max-width: 767px){
+    #img-cont {
+        width: 57%;
+        display: block;
+        margin: auto;
+        margin-bottom: 1.2em;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+}
+@media (max-width: 575px){
+    .mobile-col-2{
+        width: 30%;
+    }
+    .mobile-col-10{
+        width: 70%;
+    }
+}
+
+/* Override .bg-primary from bootstrap */
+.bg-primary-cust{
+    background-color: #1e3d5f;
+}

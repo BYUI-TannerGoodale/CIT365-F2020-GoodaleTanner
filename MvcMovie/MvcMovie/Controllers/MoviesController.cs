@@ -94,16 +94,14 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating,ImgPath")] Movie movie)
         {
-            if (movie.ImgPath == "~/images/")
-            {
-                movie.ImgPath = "~/images/productimagenotfound.jpg";
-            }
+            
             if (ModelState.IsValid)
             {
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 

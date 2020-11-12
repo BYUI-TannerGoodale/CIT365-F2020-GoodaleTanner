@@ -46,18 +46,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="ImgPath" class="control-label"></label>
-                <input asp-for="ImgPath" value="/images/" class="form-control" />
+                <input asp-for="ImgPath" value="/images/productimagenotfound.jpg" class="form-control" />
                 <span asp-validation-for="ImgPath" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group d-inline">
                 <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div class="d-inline ml-4">
+                <!--<a asp-action="Index" class="text-light">Back to List</a>-->
+                <button type="button" class="btn btn-secondary text-light" onclick="location.href='/Movies/Index'">Back to List</button>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

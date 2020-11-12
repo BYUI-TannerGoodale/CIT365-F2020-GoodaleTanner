@@ -6,9 +6,8 @@
 
 <h1>Edit Movie</h1>
 
-<h4>Movie</h4>
 <hr />
-<div class="row">
+<div class="row d-md-flex">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -51,19 +50,20 @@
                 <input asp-for="ImgPath" class="form-control" />
                 <span asp-validation-for="ImgPath" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group d-inline">
                 <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="d-inline ml-4">
+                <!--<a asp-action="Index" class="text-light">Back to List</a>-->
+                <button type="button" class="btn btn-secondary text-light" onclick="location.href='/Movies/Index'">Back to List</button>
             </div>
         </form>
     </div>
-</div>
-<div>
-    <img src="@Html.DisplayFor(model => model.ImgPath)" alt="Movie Poster" width="150" height="220" />
+    <div class="p-3 width-50">
+        <img src="@Html.DisplayFor(model => model.ImgPath)" class="ml-lg-4 mt-lg-4 img-fluid" alt="Movie Poster" />
+    </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
