@@ -59,17 +59,6 @@
                 <button type="button" class="btn btn-secondary text-light" onclick="location.href='/Movies/Index'">Back to List</button>
             </div>
 
-            @section FileScripts {
-                <script>
-                    $(document).ready(function () {
-                        $('.custom-file-input').on("change", function () {
-                            var filename = $(this).val().spilt("\\").pop();
-                            $(this).next('.custom-file-label').html(filename);
-                        })
-                    });
-                </script>
-            }
-
         </form>
     </div>
 </div>
