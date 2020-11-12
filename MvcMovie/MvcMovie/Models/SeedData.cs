@@ -27,7 +27,7 @@ namespace MvcMovie.Models
                         ReleaseDate = DateTime.Parse("2003-1-31"),
                         Genre = "Comedy",
                         Rating = "PG",
-                        ImgPath = "/images/therm.jpg",
+                        ImgPath = "therm.jpg",
                         Price = 7.99M
                     },
 
@@ -37,7 +37,7 @@ namespace MvcMovie.Models
                         ReleaseDate = DateTime.Parse("2002-4-12"),
                         Genre = "Drama",
                         Rating = "PG",
-                        ImgPath = "/images/othersideofheaven.jpg",
+                        ImgPath = "othersideofheaven.jpg",
                         Price = 8.99M
                     },
 
@@ -47,7 +47,7 @@ namespace MvcMovie.Models
                         ReleaseDate = DateTime.Parse("2014-10-10"),
                         Genre = "Documentary",
                         Rating = "G",
-                        ImgPath = "/images/meetthemormons.jpg",
+                        ImgPath = "meetthemormons.jpg",
                         Price = 1.99M
                     },
 
@@ -57,7 +57,7 @@ namespace MvcMovie.Models
                         ReleaseDate = DateTime.Parse("2013-5-31"),
                         Genre = "Drama",
                         Rating = "PG",
-                        ImgPath = "/images/ephraimsrescue.jpg",
+                        ImgPath = "ephraimsrescue.jpg",
                         Price = 10.99M
                     },
 
@@ -67,7 +67,7 @@ namespace MvcMovie.Models
                         ReleaseDate = DateTime.Parse("2019-6-24"),
                         Genre = "Comedy",
                         Rating = "PG",
-                        ImgPath = "/images/fightingpreacher.jpg",
+                        ImgPath = "fightingpreacher.jpg",
                         Price = 12.99M
                     }
                 );

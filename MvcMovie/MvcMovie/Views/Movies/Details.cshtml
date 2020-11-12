@@ -48,7 +48,7 @@
         </dd>
     </dl>
     <div id="img-cont" class="width-25 float-md-right image-center">
-        <img src="@Html.DisplayFor(model => model.ImgPath)" alt="Movie Poster" class="img-fluid" />
+        <img src="/images/@Html.DisplayFor(model => model.ImgPath)" alt="Movie Poster" class="img-fluid" />
     </div>
     <div class="form-group d-inline">
         <button type="button" class="btn btn-primary" onclick="location.href='/Movies/Edit/'+@Model.Id">Edit</button>
