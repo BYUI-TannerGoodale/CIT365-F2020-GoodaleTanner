@@ -1,0 +1,9 @@
+﻿.bg-img {
+    background-image: url(/imgs/university.jpg); /* Set background image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.tint {
+    background-color: rgba(255, 255, 255, 0.8);
+}

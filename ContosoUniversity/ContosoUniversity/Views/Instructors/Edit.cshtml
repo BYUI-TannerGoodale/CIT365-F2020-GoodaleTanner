@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <table>
+                    <table class="row">
                         <tr>
                             @{
                                 int cnt = 0;
@@ -47,8 +47,9 @@
                                     {
                                     @:</tr><tr>
                                     }
-                                    @:<td>
+                                    @:<td class="custom-checkbox col-4 p-2">
                                         <input type="checkbox"
+                                               class="col-4"
                                                name="selectedCourses"
                                                value="@course.CourseID"
                                                @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) />
