@@ -43,13 +43,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="OpeningPrayerID" class="control-label"></label>
-                <input asp-for="OpeningPrayerID" class="form-control" />
-                <span asp-validation-for="OpeningPrayerID" class="text-danger"></span>
+                <select asp-for="OpeningPrayerID" class ="form-control" asp-items="ViewBag.OpeningPrayerID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ClosingPrayerID" class="control-label"></label>
-                <input asp-for="ClosingPrayerID" class="form-control" />
-                <span asp-validation-for="ClosingPrayerID" class="text-danger"></span>
+                <select asp-for="ClosingPrayerID" class ="form-control" asp-items="ViewBag.ClosingPrayerID"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

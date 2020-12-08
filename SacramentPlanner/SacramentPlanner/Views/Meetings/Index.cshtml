@@ -31,10 +31,10 @@
                 @Html.DisplayNameFor(model => model.Intermediate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OpeningPrayerID)
+                @Html.DisplayNameFor(model => model.OpeningPrayer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClosingPrayerID)
+                @Html.DisplayNameFor(model => model.ClosingPrayer)
             </th>
             <th></th>
         </tr>
@@ -61,10 +61,10 @@
                 @Html.DisplayFor(modelItem => item.Intermediate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OpeningPrayerID)
+                @Html.DisplayFor(modelItem => item.OpeningPrayer.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClosingPrayerID)
+                @Html.DisplayFor(modelItem => item.ClosingPrayer.FullName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MeetingID">Edit</a> |

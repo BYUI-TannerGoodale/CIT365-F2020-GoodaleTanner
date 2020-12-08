@@ -22,7 +22,7 @@ namespace SacramentPlanner.Controllers
         // GET: Meetings
         public async Task<IActionResult> Index()
         {
-            var meetingContext = _context.Meetings.Include(m => m.Leader);
+            var meetingContext = _context.Meetings.Include(m => m.ClosingPrayer).Include(m => m.Leader).Include(m => m.OpeningPrayer);
             return View(await meetingContext.ToListAsync());
         }
 
@@ -35,7 +35,9 @@ namespace SacramentPlanner.Controllers
             }
 
             var meeting = await _context.Meetings
+                .Include(m => m.ClosingPrayer)
                 .Include(m => m.Leader)
+                .Include(m => m.OpeningPrayer)
                 .FirstOrDefaultAsync(m => m.MeetingID == id);
             if (meeting == null)
             {
@@ -48,7 +50,9 @@ namespace SacramentPlanner.Controllers
         // GET: Meetings/Create
         public IActionResult Create()
         {
-            ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID");
+            ViewData["ClosingPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "FullName");
+            ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "FullName");
+            ViewData["OpeningPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "FullName");
             return View();
         }
 
@@ -57,7 +61,7 @@ namespace SacramentPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MeetingID,Date,LeaderId,OpeningSong,SacramentHymn,ClosingSong,Intermediate,OpeningPrayerID,ClosingPrayerID")] Meeting meeting)
+        public async Task<IActionResult> Create([Bind("Date,LeaderId,OpeningSong,SacramentHymn,ClosingSong,Intermediate,OpeningPrayerID,ClosingPrayerID")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +69,9 @@ namespace SacramentPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "FullName", meeting.LeaderId);
+            ViewData["ClosingPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.ClosingPrayerID);
+            ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.LeaderId);
+            ViewData["OpeningPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.OpeningPrayerID);
             return View(meeting);
         }
 
@@ -82,7 +88,9 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
+            ViewData["ClosingPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.ClosingPrayerID);
             ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.LeaderId);
+            ViewData["OpeningPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.OpeningPrayerID);
             return View(meeting);
         }
 
@@ -118,7 +126,9 @@ namespace SacramentPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ClosingPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.ClosingPrayerID);
             ViewData["LeaderId"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.LeaderId);
+            ViewData["OpeningPrayerID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleID", meeting.OpeningPrayerID);
             return View(meeting);
         }
 
@@ -131,7 +141,9 @@ namespace SacramentPlanner.Controllers
             }
 
             var meeting = await _context.Meetings
+                .Include(m => m.ClosingPrayer)
                 .Include(m => m.Leader)
+                .Include(m => m.OpeningPrayer)
                 .FirstOrDefaultAsync(m => m.MeetingID == id);
             if (meeting == null)
             {

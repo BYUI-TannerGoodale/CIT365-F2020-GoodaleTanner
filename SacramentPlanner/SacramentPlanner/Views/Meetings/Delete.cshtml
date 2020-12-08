@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Leader)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Leader.PeopleID)
+            @Html.DisplayFor(model => model.Leader.FullName)
         </dd class>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.OpeningSong)
@@ -48,17 +48,17 @@
             @Html.DisplayFor(model => model.Intermediate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OpeningPrayerID)
+            @Html.DisplayNameFor(model => model.OpeningPrayer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OpeningPrayerID)
-        </dd>
+            @Html.DisplayFor(model => model.OpeningPrayer.FullName)
+        </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClosingPrayerID)
+            @Html.DisplayNameFor(model => model.ClosingPrayer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClosingPrayerID)
-        </dd>
+            @Html.DisplayFor(model => model.ClosingPrayer.FullName)
+        </dd class>
     </dl>
     
     <form asp-action="Delete">

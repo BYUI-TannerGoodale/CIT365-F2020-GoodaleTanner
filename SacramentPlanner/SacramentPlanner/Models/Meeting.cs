@@ -22,9 +22,12 @@ namespace SacramentPlanner.Models
         public string SacramentHymn { get; set; }
         public string ClosingSong { get; set; }
         public string Intermediate { get; set; }
-
         public int OpeningPrayerID { get; set; }
+        [ForeignKey("OpeningPrayerID")]
+        public People OpeningPrayer { get; set; }
         public int ClosingPrayerID { get; set; }
+        [ForeignKey("ClosingPrayerID")]
+        public People ClosingPrayer { get; set; }
 
         //public OpeningPrayer OpeningPrayer { get; set; }
         //public ClosingPrayer ClosingPrayer { get; set; }

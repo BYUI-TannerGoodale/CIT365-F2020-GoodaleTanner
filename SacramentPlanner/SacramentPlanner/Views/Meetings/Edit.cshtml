@@ -45,12 +45,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="OpeningPrayerID" class="control-label"></label>
-                <input asp-for="OpeningPrayerID" class="form-control" />
+                <select asp-for="OpeningPrayerID" class="form-control" asp-items="ViewBag.OpeningPrayerID"></select>
                 <span asp-validation-for="OpeningPrayerID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ClosingPrayerID" class="control-label"></label>
-                <input asp-for="ClosingPrayerID" class="form-control" />
+                <select asp-for="ClosingPrayerID" class="form-control" asp-items="ViewBag.ClosingPrayerID"></select>
                 <span asp-validation-for="ClosingPrayerID" class="text-danger"></span>
             </div>
             <div class="form-group">
